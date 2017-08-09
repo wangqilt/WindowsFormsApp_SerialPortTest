@@ -51,10 +51,29 @@
             this.btnSend = new System.Windows.Forms.Button();
             this.btnCleanData = new System.Windows.Forms.Button();
             this.tbxSendData = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.PC3_1 = new System.Windows.Forms.Label();
+            this.PC2_0 = new System.Windows.Forms.Label();
+            this.PC2_1 = new System.Windows.Forms.Label();
+            this.PC3_0 = new System.Windows.Forms.Label();
+            this.PC1_1 = new System.Windows.Forms.Label();
+            this.PC1_0 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.PC0_1 = new System.Windows.Forms.Label();
+            this.PC0_0 = new System.Windows.Forms.Label();
+            this.ModelShow = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -292,11 +311,161 @@
             this.tbxSendData.Size = new System.Drawing.Size(399, 112);
             this.tbxSendData.TabIndex = 0;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.ModelShow);
+            this.groupBox4.Controls.Add(this.PC3_1);
+            this.groupBox4.Controls.Add(this.PC2_0);
+            this.groupBox4.Controls.Add(this.PC2_1);
+            this.groupBox4.Controls.Add(this.PC3_0);
+            this.groupBox4.Controls.Add(this.PC1_1);
+            this.groupBox4.Controls.Add(this.PC1_0);
+            this.groupBox4.Controls.Add(this.pictureBox5);
+            this.groupBox4.Controls.Add(this.pictureBox4);
+            this.groupBox4.Controls.Add(this.pictureBox3);
+            this.groupBox4.Controls.Add(this.pictureBox2);
+            this.groupBox4.Controls.Add(this.PC0_1);
+            this.groupBox4.Controls.Add(this.PC0_0);
+            this.groupBox4.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox4.Location = new System.Drawing.Point(13, 215);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(612, 529);
+            this.groupBox4.TabIndex = 3;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "模型展示";
+            // 
+            // PC3_1
+            // 
+            this.PC3_1.AutoSize = true;
+            this.PC3_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC3_1.Location = new System.Drawing.Point(327, 414);
+            this.PC3_1.Name = "PC3_1";
+            this.PC3_1.Size = new System.Drawing.Size(61, 20);
+            this.PC3_1.TabIndex = 11;
+            this.PC3_1.Text = "Passive";
+            // 
+            // PC2_0
+            // 
+            this.PC2_0.AutoSize = true;
+            this.PC2_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC2_0.Location = new System.Drawing.Point(58, 391);
+            this.PC2_0.Name = "PC2_0";
+            this.PC2_0.Size = new System.Drawing.Size(47, 20);
+            this.PC2_0.TabIndex = 10;
+            this.PC2_0.Text = "Slave";
+            // 
+            // PC2_1
+            // 
+            this.PC2_1.AutoSize = true;
+            this.PC2_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC2_1.Location = new System.Drawing.Point(146, 414);
+            this.PC2_1.Name = "PC2_1";
+            this.PC2_1.Size = new System.Drawing.Size(47, 20);
+            this.PC2_1.TabIndex = 9;
+            this.PC2_1.Text = "Slave";
+            // 
+            // PC3_0
+            // 
+            this.PC3_0.AutoSize = true;
+            this.PC3_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC3_0.Location = new System.Drawing.Point(407, 391);
+            this.PC3_0.Name = "PC3_0";
+            this.PC3_0.Size = new System.Drawing.Size(47, 20);
+            this.PC3_0.TabIndex = 8;
+            this.PC3_0.Text = "Slave";
+            // 
+            // PC1_1
+            // 
+            this.PC1_1.AutoSize = true;
+            this.PC1_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC1_1.Location = new System.Drawing.Point(407, 186);
+            this.PC1_1.Name = "PC1_1";
+            this.PC1_1.Size = new System.Drawing.Size(47, 20);
+            this.PC1_1.TabIndex = 7;
+            this.PC1_1.Text = "Slave";
+            // 
+            // PC1_0
+            // 
+            this.PC1_0.AutoSize = true;
+            this.PC1_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC1_0.Location = new System.Drawing.Point(341, 100);
+            this.PC1_0.Name = "PC1_0";
+            this.PC1_0.Size = new System.Drawing.Size(47, 20);
+            this.PC1_0.TabIndex = 6;
+            this.PC1_0.Text = "Slave";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(394, 414);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(84, 72);
+            this.pictureBox5.TabIndex = 5;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(47, 414);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(84, 72);
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(394, 100);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(84, 72);
+            this.pictureBox3.TabIndex = 3;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(47, 100);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(81, 81);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
+            // PC0_1
+            // 
+            this.PC0_1.AutoSize = true;
+            this.PC0_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC0_1.Location = new System.Drawing.Point(58, 186);
+            this.PC0_1.Name = "PC0_1";
+            this.PC0_1.Size = new System.Drawing.Size(60, 20);
+            this.PC0_1.TabIndex = 1;
+            this.PC0_1.Text = "Master";
+            // 
+            // PC0_0
+            // 
+            this.PC0_0.AutoSize = true;
+            this.PC0_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC0_0.Location = new System.Drawing.Point(146, 100);
+            this.PC0_0.Name = "PC0_0";
+            this.PC0_0.Size = new System.Drawing.Size(60, 20);
+            this.PC0_0.TabIndex = 0;
+            this.PC0_0.Text = "Master";
+            // 
+            // ModelShow
+            // 
+            this.ModelShow.Location = new System.Drawing.Point(221, 30);
+            this.ModelShow.Name = "ModelShow";
+            this.ModelShow.Size = new System.Drawing.Size(89, 35);
+            this.ModelShow.TabIndex = 12;
+            this.ModelShow.Text = "Show";
+            this.ModelShow.UseVisualStyleBackColor = true;
+            this.ModelShow.Click += new System.EventHandler(this.ModelShow_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1082, 750);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -311,6 +480,12 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,6 +514,20 @@
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.Button btnCleanData;
         private System.Windows.Forms.TextBox tbxSendData;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label PC0_1;
+        private System.Windows.Forms.Label PC0_0;
+        private System.Windows.Forms.Label PC3_1;
+        private System.Windows.Forms.Label PC2_0;
+        private System.Windows.Forms.Label PC2_1;
+        private System.Windows.Forms.Label PC3_0;
+        private System.Windows.Forms.Label PC1_1;
+        private System.Windows.Forms.Label PC1_0;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button ModelShow;
     }
 }
 
