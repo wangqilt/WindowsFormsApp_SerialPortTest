@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnOpenCOM = new System.Windows.Forms.Button();
             this.btnCheckCOM = new System.Windows.Forms.Button();
             this.rbnHex = new System.Windows.Forms.RadioButton();
@@ -52,28 +51,48 @@
             this.btnCleanData = new System.Windows.Forms.Button();
             this.tbxSendData = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.PC3_1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.PC2_0 = new System.Windows.Forms.Label();
             this.PC2_1 = new System.Windows.Forms.Label();
             this.PC3_0 = new System.Windows.Forms.Label();
             this.PC1_1 = new System.Windows.Forms.Label();
             this.PC1_0 = new System.Windows.Forms.Label();
+            this.PC0_1 = new System.Windows.Forms.Label();
+            this.PC0_0 = new System.Windows.Forms.Label();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.pictureBox12 = new System.Windows.Forms.PictureBox();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.PC0_1 = new System.Windows.Forms.Label();
-            this.PC0_0 = new System.Windows.Forms.Label();
-            this.ModelShow = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -101,17 +120,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "串口配置";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(411, 88);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 87);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
             // 
             // btnOpenCOM
             // 
@@ -313,8 +321,19 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.ModelShow);
-            this.groupBox4.Controls.Add(this.PC3_1);
+            this.groupBox4.Controls.Add(this.pictureBox13);
+            this.groupBox4.Controls.Add(this.pictureBox12);
+            this.groupBox4.Controls.Add(this.pictureBox11);
+            this.groupBox4.Controls.Add(this.pictureBox10);
+            this.groupBox4.Controls.Add(this.pictureBox9);
+            this.groupBox4.Controls.Add(this.pictureBox8);
+            this.groupBox4.Controls.Add(this.pictureBox7);
+            this.groupBox4.Controls.Add(this.pictureBox6);
+            this.groupBox4.Controls.Add(this.label8);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.PC2_0);
             this.groupBox4.Controls.Add(this.PC2_1);
             this.groupBox4.Controls.Add(this.PC3_0);
@@ -334,15 +353,55 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "模型展示";
             // 
-            // PC3_1
+            // label8
             // 
-            this.PC3_1.AutoSize = true;
-            this.PC3_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PC3_1.Location = new System.Drawing.Point(327, 414);
-            this.PC3_1.Name = "PC3_1";
-            this.PC3_1.Size = new System.Drawing.Size(61, 20);
-            this.PC3_1.TabIndex = 11;
-            this.PC3_1.Text = "Passive";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label8.Location = new System.Drawing.Point(418, 489);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 19);
+            this.label8.TabIndex = 15;
+            this.label8.Text = "PC3";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label7.Location = new System.Drawing.Point(67, 489);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 19);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "PC2";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label6.Location = new System.Drawing.Point(420, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 19);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "PC1";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.Location = new System.Drawing.Point(69, 52);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 19);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "PC0";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label12.Location = new System.Drawing.Point(327, 414);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(61, 20);
+            this.label12.TabIndex = 11;
+            this.label12.Text = "Passive";
             // 
             // PC2_0
             // 
@@ -378,7 +437,7 @@
             // 
             this.PC1_1.AutoSize = true;
             this.PC1_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PC1_1.Location = new System.Drawing.Point(407, 186);
+            this.PC1_1.Location = new System.Drawing.Point(409, 160);
             this.PC1_1.Name = "PC1_1";
             this.PC1_1.Size = new System.Drawing.Size(47, 20);
             this.PC1_1.TabIndex = 7;
@@ -388,11 +447,103 @@
             // 
             this.PC1_0.AutoSize = true;
             this.PC1_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PC1_0.Location = new System.Drawing.Point(341, 100);
+            this.PC1_0.Location = new System.Drawing.Point(343, 74);
             this.PC1_0.Name = "PC1_0";
             this.PC1_0.Size = new System.Drawing.Size(47, 20);
             this.PC1_0.TabIndex = 6;
             this.PC1_0.Text = "Slave";
+            // 
+            // PC0_1
+            // 
+            this.PC0_1.AutoSize = true;
+            this.PC0_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC0_1.Location = new System.Drawing.Point(60, 160);
+            this.PC0_1.Name = "PC0_1";
+            this.PC0_1.Size = new System.Drawing.Size(60, 20);
+            this.PC0_1.TabIndex = 1;
+            this.PC0_1.Text = "Master";
+            // 
+            // PC0_0
+            // 
+            this.PC0_0.AutoSize = true;
+            this.PC0_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC0_0.Location = new System.Drawing.Point(148, 74);
+            this.PC0_0.Name = "PC0_0";
+            this.PC0_0.Size = new System.Drawing.Size(60, 20);
+            this.PC0_0.TabIndex = 0;
+            this.PC0_0.Text = "Master";
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
+            this.pictureBox13.Location = new System.Drawing.Point(165, 463);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(200, 20);
+            this.pictureBox13.TabIndex = 24;
+            this.pictureBox13.TabStop = false;
+            // 
+            // pictureBox12
+            // 
+            this.pictureBox12.Image = global::WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+            this.pictureBox12.Location = new System.Drawing.Point(165, 437);
+            this.pictureBox12.Name = "pictureBox12";
+            this.pictureBox12.Size = new System.Drawing.Size(200, 20);
+            this.pictureBox12.TabIndex = 23;
+            this.pictureBox12.TabStop = false;
+            // 
+            // pictureBox11
+            // 
+            this.pictureBox11.Image = global::WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+            this.pictureBox11.Location = new System.Drawing.Point(437, 188);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(20, 200);
+            this.pictureBox11.TabIndex = 22;
+            this.pictureBox11.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+            this.pictureBox10.Location = new System.Drawing.Point(411, 188);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(20, 200);
+            this.pictureBox10.TabIndex = 21;
+            this.pictureBox10.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.Image = global::WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+            this.pictureBox9.Location = new System.Drawing.Point(87, 183);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(20, 200);
+            this.pictureBox9.TabIndex = 20;
+            this.pictureBox9.TabStop = false;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.Image = global::WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+            this.pictureBox8.Location = new System.Drawing.Point(61, 183);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(20, 200);
+            this.pictureBox8.TabIndex = 18;
+            this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(165, 123);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(200, 20);
+            this.pictureBox7.TabIndex = 17;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+            this.pictureBox6.Location = new System.Drawing.Point(166, 97);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(200, 20);
+            this.pictureBox6.TabIndex = 16;
+            this.pictureBox6.TabStop = false;
             // 
             // pictureBox5
             // 
@@ -415,7 +566,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(394, 100);
+            this.pictureBox3.Location = new System.Drawing.Point(396, 74);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(84, 72);
             this.pictureBox3.TabIndex = 3;
@@ -424,41 +575,22 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(47, 100);
+            this.pictureBox2.Location = new System.Drawing.Point(49, 74);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(81, 81);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // PC0_1
+            // pictureBox1
             // 
-            this.PC0_1.AutoSize = true;
-            this.PC0_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PC0_1.Location = new System.Drawing.Point(58, 186);
-            this.PC0_1.Name = "PC0_1";
-            this.PC0_1.Size = new System.Drawing.Size(60, 20);
-            this.PC0_1.TabIndex = 1;
-            this.PC0_1.Text = "Master";
-            // 
-            // PC0_0
-            // 
-            this.PC0_0.AutoSize = true;
-            this.PC0_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PC0_0.Location = new System.Drawing.Point(146, 100);
-            this.PC0_0.Name = "PC0_0";
-            this.PC0_0.Size = new System.Drawing.Size(60, 20);
-            this.PC0_0.TabIndex = 0;
-            this.PC0_0.Text = "Master";
-            // 
-            // ModelShow
-            // 
-            this.ModelShow.Location = new System.Drawing.Point(221, 30);
-            this.ModelShow.Name = "ModelShow";
-            this.ModelShow.Size = new System.Drawing.Size(89, 35);
-            this.ModelShow.TabIndex = 12;
-            this.ModelShow.Text = "Show";
-            this.ModelShow.UseVisualStyleBackColor = true;
-            this.ModelShow.Click += new System.EventHandler(this.ModelShow_Click);
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(411, 88);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(202, 87);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -475,17 +607,25 @@
             this.Load += new System.EventHandler(this.Form1_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -518,7 +658,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label PC0_1;
         private System.Windows.Forms.Label PC0_0;
-        private System.Windows.Forms.Label PC3_1;
+        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label PC2_0;
         private System.Windows.Forms.Label PC2_1;
         private System.Windows.Forms.Label PC3_0;
@@ -527,7 +667,18 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button ModelShow;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.PictureBox pictureBox12;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox pictureBox9;
     }
 }
 

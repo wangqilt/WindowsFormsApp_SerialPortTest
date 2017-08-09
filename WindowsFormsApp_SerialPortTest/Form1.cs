@@ -525,9 +525,6 @@ namespace WindowsFormsApp_SerialPortTest
             }));
         }
 
-        private void ModelShow_Click(object sender, EventArgs e)
-        {
-            PC0_0.Text = "Slave";
-        }
+        
     }
 }
