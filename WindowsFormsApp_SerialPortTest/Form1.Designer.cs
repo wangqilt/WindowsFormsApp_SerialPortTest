@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnOpenCOM = new System.Windows.Forms.Button();
             this.btnCheckCOM = new System.Windows.Forms.Button();
             this.rbnHex = new System.Windows.Forms.RadioButton();
@@ -47,22 +48,27 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbxRecvData = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnAction = new System.Windows.Forms.Button();
+            this.btnBuildClock = new System.Windows.Forms.Button();
+            this.tbxSendSeconds = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbxSendMinutes = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.tbxSendHours = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
             this.btnCleanData = new System.Windows.Forms.Button();
             this.tbxSendData = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.PC2_0 = new System.Windows.Forms.Label();
-            this.PC2_1 = new System.Windows.Forms.Label();
-            this.PC3_0 = new System.Windows.Forms.Label();
-            this.PC1_1 = new System.Windows.Forms.Label();
-            this.PC1_0 = new System.Windows.Forms.Label();
-            this.PC0_1 = new System.Windows.Forms.Label();
-            this.PC0_0 = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.cbxCutBoth0_3 = new System.Windows.Forms.CheckBox();
+            this.cbxCutBoth1_0 = new System.Windows.Forms.CheckBox();
+            this.cbxCut1_0 = new System.Windows.Forms.CheckBox();
+            this.cbxCut0_3 = new System.Windows.Forms.CheckBox();
+            this.cbxPC3 = new System.Windows.Forms.CheckBox();
+            this.cbxPC2 = new System.Windows.Forms.CheckBox();
+            this.cbxPC1 = new System.Windows.Forms.CheckBox();
+            this.cbxPC0 = new System.Windows.Forms.CheckBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -71,12 +77,20 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.PC2_1 = new System.Windows.Forms.Label();
+            this.PC3_0 = new System.Windows.Forms.Label();
+            this.PC3_1 = new System.Windows.Forms.Label();
+            this.PC2_0 = new System.Windows.Forms.Label();
+            this.PC1_1 = new System.Windows.Forms.Label();
+            this.PC1_0 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.PC0_1 = new System.Windows.Forms.Label();
+            this.PC0_0 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -92,7 +106,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -120,6 +133,17 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "串口配置";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = global::WindowsFormsApp_SerialPortTest.Properties.Resources.fiberhome_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(411, 88);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(202, 87);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // btnOpenCOM
             // 
@@ -258,7 +282,7 @@
             this.groupBox2.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox2.Location = new System.Drawing.Point(636, 25);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(434, 319);
+            this.groupBox2.Size = new System.Drawing.Size(434, 261);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "数据接收";
@@ -267,26 +291,105 @@
             // 
             this.tbxRecvData.BackColor = System.Drawing.SystemColors.Window;
             this.tbxRecvData.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbxRecvData.Location = new System.Drawing.Point(14, 30);
+            this.tbxRecvData.Location = new System.Drawing.Point(14, 27);
             this.tbxRecvData.Multiline = true;
             this.tbxRecvData.Name = "tbxRecvData";
             this.tbxRecvData.ReadOnly = true;
-            this.tbxRecvData.Size = new System.Drawing.Size(400, 280);
+            this.tbxRecvData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbxRecvData.Size = new System.Drawing.Size(400, 212);
             this.tbxRecvData.TabIndex = 0;
             this.tbxRecvData.TextChanged += new System.EventHandler(this.tbxRecvData_TextChanged);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnAction);
+            this.groupBox3.Controls.Add(this.btnBuildClock);
+            this.groupBox3.Controls.Add(this.tbxSendSeconds);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.tbxSendMinutes);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.tbxSendHours);
+            this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.btnSend);
             this.groupBox3.Controls.Add(this.btnCleanData);
             this.groupBox3.Controls.Add(this.tbxSendData);
             this.groupBox3.Font = new System.Drawing.Font("微软雅黑", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox3.Location = new System.Drawing.Point(636, 370);
+            this.groupBox3.Location = new System.Drawing.Point(637, 298);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(433, 184);
+            this.groupBox3.Size = new System.Drawing.Size(433, 446);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "数据发送";
+            // 
+            // btnAction
+            // 
+            this.btnAction.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnAction.Location = new System.Drawing.Point(172, 149);
+            this.btnAction.Name = "btnAction";
+            this.btnAction.Size = new System.Drawing.Size(80, 30);
+            this.btnAction.TabIndex = 25;
+            this.btnAction.Text = "show";
+            this.btnAction.UseVisualStyleBackColor = true;
+            this.btnAction.Click += new System.EventHandler(this.btnAction_Click);
+            // 
+            // btnBuildClock
+            // 
+            this.btnBuildClock.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnBuildClock.Location = new System.Drawing.Point(333, 195);
+            this.btnBuildClock.Name = "btnBuildClock";
+            this.btnBuildClock.Size = new System.Drawing.Size(80, 30);
+            this.btnBuildClock.TabIndex = 9;
+            this.btnBuildClock.Text = "build";
+            this.btnBuildClock.UseVisualStyleBackColor = true;
+            this.btnBuildClock.Click += new System.EventHandler(this.btnBuildClock_Click);
+            // 
+            // tbxSendSeconds
+            // 
+            this.tbxSendSeconds.Location = new System.Drawing.Point(251, 194);
+            this.tbxSendSeconds.Name = "tbxSendSeconds";
+            this.tbxSendSeconds.Size = new System.Drawing.Size(50, 31);
+            this.tbxSendSeconds.TabIndex = 8;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(228, 194);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(17, 26);
+            this.label11.TabIndex = 7;
+            this.label11.Text = ":";
+            // 
+            // tbxSendMinutes
+            // 
+            this.tbxSendMinutes.Location = new System.Drawing.Point(172, 194);
+            this.tbxSendMinutes.Name = "tbxSendMinutes";
+            this.tbxSendMinutes.Size = new System.Drawing.Size(50, 31);
+            this.tbxSendMinutes.TabIndex = 6;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(149, 194);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(17, 26);
+            this.label10.TabIndex = 5;
+            this.label10.Text = ":";
+            // 
+            // tbxSendHours
+            // 
+            this.tbxSendHours.Location = new System.Drawing.Point(93, 194);
+            this.tbxSendHours.Name = "tbxSendHours";
+            this.tbxSendHours.Size = new System.Drawing.Size(50, 31);
+            this.tbxSendHours.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(23, 194);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(64, 26);
+            this.label9.TabIndex = 3;
+            this.label9.Text = "Clock";
             // 
             // btnSend
             // 
@@ -321,6 +424,15 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnReset);
+            this.groupBox4.Controls.Add(this.cbxCutBoth0_3);
+            this.groupBox4.Controls.Add(this.cbxCutBoth1_0);
+            this.groupBox4.Controls.Add(this.cbxCut1_0);
+            this.groupBox4.Controls.Add(this.cbxCut0_3);
+            this.groupBox4.Controls.Add(this.cbxPC3);
+            this.groupBox4.Controls.Add(this.cbxPC2);
+            this.groupBox4.Controls.Add(this.cbxPC1);
+            this.groupBox4.Controls.Add(this.cbxPC0);
             this.groupBox4.Controls.Add(this.pictureBox13);
             this.groupBox4.Controls.Add(this.pictureBox12);
             this.groupBox4.Controls.Add(this.pictureBox11);
@@ -329,14 +441,10 @@
             this.groupBox4.Controls.Add(this.pictureBox8);
             this.groupBox4.Controls.Add(this.pictureBox7);
             this.groupBox4.Controls.Add(this.pictureBox6);
-            this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.label6);
-            this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.PC2_0);
             this.groupBox4.Controls.Add(this.PC2_1);
             this.groupBox4.Controls.Add(this.PC3_0);
+            this.groupBox4.Controls.Add(this.PC3_1);
+            this.groupBox4.Controls.Add(this.PC2_0);
             this.groupBox4.Controls.Add(this.PC1_1);
             this.groupBox4.Controls.Add(this.PC1_0);
             this.groupBox4.Controls.Add(this.pictureBox5);
@@ -353,125 +461,109 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "模型展示";
             // 
-            // label8
+            // btnReset
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(418, 489);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 19);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "PC3";
+            this.btnReset.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btnReset.Location = new System.Drawing.Point(527, 488);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(80, 30);
+            this.btnReset.TabIndex = 35;
+            this.btnReset.Text = "reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // label7
+            // cbxCutBoth0_3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(67, 489);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 19);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "PC2";
+            this.cbxCutBoth0_3.AutoSize = true;
+            this.cbxCutBoth0_3.Location = new System.Drawing.Point(119, 290);
+            this.cbxCutBoth0_3.Name = "cbxCutBoth0_3";
+            this.cbxCutBoth0_3.Size = new System.Drawing.Size(115, 30);
+            this.cbxCutBoth0_3.TabIndex = 34;
+            this.cbxCutBoth0_3.Text = "cut both";
+            this.cbxCutBoth0_3.UseVisualStyleBackColor = true;
+            this.cbxCutBoth0_3.CheckedChanged += new System.EventHandler(this.cbxCutBoth0_3_CheckedChanged);
             // 
-            // label6
+            // cbxCutBoth1_0
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(420, 52);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 19);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "PC1";
+            this.cbxCutBoth1_0.AutoSize = true;
+            this.cbxCutBoth1_0.Location = new System.Drawing.Point(231, 173);
+            this.cbxCutBoth1_0.Name = "cbxCutBoth1_0";
+            this.cbxCutBoth1_0.Size = new System.Drawing.Size(115, 30);
+            this.cbxCutBoth1_0.TabIndex = 33;
+            this.cbxCutBoth1_0.Text = "cut both";
+            this.cbxCutBoth1_0.UseVisualStyleBackColor = true;
+            this.cbxCutBoth1_0.CheckedChanged += new System.EventHandler(this.cbxCutBoth1_0_CheckedChanged);
             // 
-            // label5
+            // cbxCut1_0
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(69, 52);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(38, 19);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "PC0";
+            this.cbxCut1_0.AutoSize = true;
+            this.cbxCut1_0.Location = new System.Drawing.Point(231, 149);
+            this.cbxCut1_0.Name = "cbxCut1_0";
+            this.cbxCut1_0.Size = new System.Drawing.Size(64, 30);
+            this.cbxCut1_0.TabIndex = 32;
+            this.cbxCut1_0.Text = "cut";
+            this.cbxCut1_0.UseVisualStyleBackColor = true;
+            this.cbxCut1_0.CheckedChanged += new System.EventHandler(this.cbxCut1_0_CheckedChanged);
             // 
-            // label12
+            // cbxCut0_3
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(327, 414);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 20);
-            this.label12.TabIndex = 11;
-            this.label12.Text = "Passive";
+            this.cbxCut0_3.AutoSize = true;
+            this.cbxCut0_3.Location = new System.Drawing.Point(119, 264);
+            this.cbxCut0_3.Name = "cbxCut0_3";
+            this.cbxCut0_3.Size = new System.Drawing.Size(64, 30);
+            this.cbxCut0_3.TabIndex = 31;
+            this.cbxCut0_3.Text = "cut";
+            this.cbxCut0_3.UseVisualStyleBackColor = true;
+            this.cbxCut0_3.CheckedChanged += new System.EventHandler(this.cbxCut0_3_CheckedChanged);
             // 
-            // PC2_0
+            // cbxPC3
             // 
-            this.PC2_0.AutoSize = true;
-            this.PC2_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PC2_0.Location = new System.Drawing.Point(58, 391);
-            this.PC2_0.Name = "PC2_0";
-            this.PC2_0.Size = new System.Drawing.Size(47, 20);
-            this.PC2_0.TabIndex = 10;
-            this.PC2_0.Text = "Slave";
+            this.cbxPC3.AutoSize = true;
+            this.cbxPC3.Checked = true;
+            this.cbxPC3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbxPC3.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbxPC3.Location = new System.Drawing.Point(61, 488);
+            this.cbxPC3.Name = "cbxPC3";
+            this.cbxPC3.Size = new System.Drawing.Size(60, 23);
+            this.cbxPC3.TabIndex = 28;
+            this.cbxPC3.Text = "PC4";
+            this.cbxPC3.UseVisualStyleBackColor = true;
             // 
-            // PC2_1
+            // cbxPC2
             // 
-            this.PC2_1.AutoSize = true;
-            this.PC2_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PC2_1.Location = new System.Drawing.Point(146, 414);
-            this.PC2_1.Name = "PC2_1";
-            this.PC2_1.Size = new System.Drawing.Size(47, 20);
-            this.PC2_1.TabIndex = 9;
-            this.PC2_1.Text = "Slave";
+            this.cbxPC2.AutoSize = true;
+            this.cbxPC2.Enabled = false;
+            this.cbxPC2.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbxPC2.Location = new System.Drawing.Point(411, 488);
+            this.cbxPC2.Name = "cbxPC2";
+            this.cbxPC2.Size = new System.Drawing.Size(60, 23);
+            this.cbxPC2.TabIndex = 27;
+            this.cbxPC2.Text = "PC3";
+            this.cbxPC2.UseVisualStyleBackColor = true;
             // 
-            // PC3_0
+            // cbxPC1
             // 
-            this.PC3_0.AutoSize = true;
-            this.PC3_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PC3_0.Location = new System.Drawing.Point(407, 391);
-            this.PC3_0.Name = "PC3_0";
-            this.PC3_0.Size = new System.Drawing.Size(47, 20);
-            this.PC3_0.TabIndex = 8;
-            this.PC3_0.Text = "Slave";
+            this.cbxPC1.AutoSize = true;
+            this.cbxPC1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbxPC1.Location = new System.Drawing.Point(411, 48);
+            this.cbxPC1.Name = "cbxPC1";
+            this.cbxPC1.Size = new System.Drawing.Size(60, 23);
+            this.cbxPC1.TabIndex = 26;
+            this.cbxPC1.Text = "PC2";
+            this.cbxPC1.UseVisualStyleBackColor = true;
+            this.cbxPC1.CheckedChanged += new System.EventHandler(this.cbxPC1_CheckedChanged);
             // 
-            // PC1_1
+            // cbxPC0
             // 
-            this.PC1_1.AutoSize = true;
-            this.PC1_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PC1_1.Location = new System.Drawing.Point(409, 160);
-            this.PC1_1.Name = "PC1_1";
-            this.PC1_1.Size = new System.Drawing.Size(47, 20);
-            this.PC1_1.TabIndex = 7;
-            this.PC1_1.Text = "Slave";
-            // 
-            // PC1_0
-            // 
-            this.PC1_0.AutoSize = true;
-            this.PC1_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PC1_0.Location = new System.Drawing.Point(343, 74);
-            this.PC1_0.Name = "PC1_0";
-            this.PC1_0.Size = new System.Drawing.Size(47, 20);
-            this.PC1_0.TabIndex = 6;
-            this.PC1_0.Text = "Slave";
-            // 
-            // PC0_1
-            // 
-            this.PC0_1.AutoSize = true;
-            this.PC0_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PC0_1.Location = new System.Drawing.Point(60, 160);
-            this.PC0_1.Name = "PC0_1";
-            this.PC0_1.Size = new System.Drawing.Size(60, 20);
-            this.PC0_1.TabIndex = 1;
-            this.PC0_1.Text = "Master";
-            // 
-            // PC0_0
-            // 
-            this.PC0_0.AutoSize = true;
-            this.PC0_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.PC0_0.Location = new System.Drawing.Point(148, 74);
-            this.PC0_0.Name = "PC0_0";
-            this.PC0_0.Size = new System.Drawing.Size(60, 20);
-            this.PC0_0.TabIndex = 0;
-            this.PC0_0.Text = "Master";
+            this.cbxPC0.AutoSize = true;
+            this.cbxPC0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cbxPC0.Location = new System.Drawing.Point(62, 48);
+            this.cbxPC0.Name = "cbxPC0";
+            this.cbxPC0.Size = new System.Drawing.Size(60, 23);
+            this.cbxPC0.TabIndex = 25;
+            this.cbxPC0.Text = "PC1";
+            this.cbxPC0.UseVisualStyleBackColor = true;
+            this.cbxPC0.CheckedChanged += new System.EventHandler(this.cbxPC0_CheckedChanged);
             // 
             // pictureBox13
             // 
@@ -512,7 +604,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = global::WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
-            this.pictureBox9.Location = new System.Drawing.Point(87, 183);
+            this.pictureBox9.Location = new System.Drawing.Point(55, 183);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(20, 200);
             this.pictureBox9.TabIndex = 20;
@@ -521,7 +613,7 @@
             // pictureBox8
             // 
             this.pictureBox8.Image = global::WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
-            this.pictureBox8.Location = new System.Drawing.Point(61, 183);
+            this.pictureBox8.Location = new System.Drawing.Point(83, 183);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(20, 200);
             this.pictureBox8.TabIndex = 18;
@@ -529,7 +621,7 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Image = global::WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
             this.pictureBox7.Location = new System.Drawing.Point(165, 123);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(200, 20);
@@ -544,6 +636,66 @@
             this.pictureBox6.Size = new System.Drawing.Size(200, 20);
             this.pictureBox6.TabIndex = 16;
             this.pictureBox6.TabStop = false;
+            // 
+            // PC2_1
+            // 
+            this.PC2_1.AutoSize = true;
+            this.PC2_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC2_1.Location = new System.Drawing.Point(327, 414);
+            this.PC2_1.Name = "PC2_1";
+            this.PC2_1.Size = new System.Drawing.Size(29, 19);
+            this.PC2_1.TabIndex = 11;
+            this.PC2_1.Text = "     ";
+            // 
+            // PC3_0
+            // 
+            this.PC3_0.AutoSize = true;
+            this.PC3_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC3_0.Location = new System.Drawing.Point(58, 391);
+            this.PC3_0.Name = "PC3_0";
+            this.PC3_0.Size = new System.Drawing.Size(21, 19);
+            this.PC3_0.TabIndex = 10;
+            this.PC3_0.Text = "   ";
+            // 
+            // PC3_1
+            // 
+            this.PC3_1.AutoSize = true;
+            this.PC3_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC3_1.Location = new System.Drawing.Point(146, 414);
+            this.PC3_1.Name = "PC3_1";
+            this.PC3_1.Size = new System.Drawing.Size(25, 19);
+            this.PC3_1.TabIndex = 9;
+            this.PC3_1.Text = "    ";
+            // 
+            // PC2_0
+            // 
+            this.PC2_0.AutoSize = true;
+            this.PC2_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC2_0.Location = new System.Drawing.Point(407, 391);
+            this.PC2_0.Name = "PC2_0";
+            this.PC2_0.Size = new System.Drawing.Size(29, 19);
+            this.PC2_0.TabIndex = 8;
+            this.PC2_0.Text = "     ";
+            // 
+            // PC1_1
+            // 
+            this.PC1_1.AutoSize = true;
+            this.PC1_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC1_1.Location = new System.Drawing.Point(409, 160);
+            this.PC1_1.Name = "PC1_1";
+            this.PC1_1.Size = new System.Drawing.Size(29, 19);
+            this.PC1_1.TabIndex = 7;
+            this.PC1_1.Text = "     ";
+            // 
+            // PC1_0
+            // 
+            this.PC1_0.AutoSize = true;
+            this.PC1_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC1_0.Location = new System.Drawing.Point(343, 74);
+            this.PC1_0.Name = "PC1_0";
+            this.PC1_0.Size = new System.Drawing.Size(29, 19);
+            this.PC1_0.TabIndex = 6;
+            this.PC1_0.Text = "     ";
             // 
             // pictureBox5
             // 
@@ -574,6 +726,7 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(49, 74);
             this.pictureBox2.Name = "pictureBox2";
@@ -581,16 +734,25 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // PC0_1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(411, 88);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 87);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.PC0_1.AutoSize = true;
+            this.PC0_1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC0_1.Location = new System.Drawing.Point(60, 160);
+            this.PC0_1.Name = "PC0_1";
+            this.PC0_1.Size = new System.Drawing.Size(21, 19);
+            this.PC0_1.TabIndex = 1;
+            this.PC0_1.Text = "   ";
+            // 
+            // PC0_0
+            // 
+            this.PC0_0.AutoSize = true;
+            this.PC0_0.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.PC0_0.Location = new System.Drawing.Point(148, 74);
+            this.PC0_0.Name = "PC0_0";
+            this.PC0_0.Size = new System.Drawing.Size(33, 19);
+            this.PC0_0.TabIndex = 0;
+            this.PC0_0.Text = "      ";
             // 
             // Form1
             // 
@@ -603,10 +765,11 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "FiberHome火星人";
+            this.Text = "FiberHome 火星人";
             this.Load += new System.EventHandler(this.Form1_Load_1);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -625,7 +788,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -658,19 +820,15 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label PC0_1;
         private System.Windows.Forms.Label PC0_0;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label PC2_0;
         private System.Windows.Forms.Label PC2_1;
         private System.Windows.Forms.Label PC3_0;
+        private System.Windows.Forms.Label PC3_1;
+        private System.Windows.Forms.Label PC2_0;
         private System.Windows.Forms.Label PC1_1;
         private System.Windows.Forms.Label PC1_0;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox7;
@@ -679,6 +837,23 @@
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.Button btnBuildClock;
+        private System.Windows.Forms.TextBox tbxSendSeconds;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox tbxSendMinutes;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox tbxSendHours;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button btnAction;
+        private System.Windows.Forms.CheckBox cbxPC3;
+        private System.Windows.Forms.CheckBox cbxPC1;
+        private System.Windows.Forms.CheckBox cbxPC0;
+        private System.Windows.Forms.CheckBox cbxPC2;
+        private System.Windows.Forms.CheckBox cbxCut0_3;
+        private System.Windows.Forms.CheckBox cbxCut1_0;
+        private System.Windows.Forms.CheckBox cbxCutBoth0_3;
+        private System.Windows.Forms.CheckBox cbxCutBoth1_0;
+        private System.Windows.Forms.Button btnReset;
     }
 }
 

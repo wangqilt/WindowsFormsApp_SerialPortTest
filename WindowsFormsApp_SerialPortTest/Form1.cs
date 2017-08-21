@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
 
+
+
 namespace WindowsFormsApp_SerialPortTest
 {
     public partial class Form1 : Form
@@ -24,6 +26,14 @@ namespace WindowsFormsApp_SerialPortTest
             InitializeComponent();
         }
 
+        public static void Delay(int milliSecond)
+        {
+            int start = Environment.TickCount;
+            while (Math.Abs(Environment.TickCount - start) < milliSecond)
+            {
+                Application.DoEvents();
+            }
+        }
 
 /*        private void Form1_Load(object sender, EventArgs e)
         {
@@ -499,7 +509,7 @@ namespace WindowsFormsApp_SerialPortTest
 
         private void tbxRecvData_TextChanged(object sender, EventArgs e)
         {
-            System.Threading.Thread.Sleep(100);//delay 100ms for waitting data received
+            System.Threading.Thread.Sleep(10);//delay 100ms for waitting data received
 
             //this.invoke是跨线程访问UI的方法，也是本文范例
             this.Invoke((EventHandler)(delegate
@@ -525,6 +535,539 @@ namespace WindowsFormsApp_SerialPortTest
             }));
         }
 
-        
+        private void btnBuildClock_Click(object sender, EventArgs e)
+        {
+            string prefix = "<00|00|";
+            string sendClockData = "";
+
+            btnCleanData_Click_1(sender, e);
+            sendClockData = prefix + tbxSendHours.Text.Trim() + "." + tbxSendMinutes.Text.Trim() + "." + tbxSendSeconds.Text.Trim() + ">\n";
+            tbxSendData.Text = sendClockData;
+        }
+
+        private void btnAction_Click(object sender, EventArgs e)
+        {
+            if (btnAction.Text == "show")
+            {
+                btnAction.Text = "reset";
+
+                System.Threading.Thread.Sleep(1000);
+
+                PC0_0.Text = "Master";
+                PC0_1.Text = "Master";
+                PC1_0.Text = "Slave";
+                PC1_1.Text = "Master";
+                PC2_0.Text = "Slave";
+                PC2_1.Text = "Passive";
+                PC3_0.Text = "Slave";
+                PC3_1.Text = "Master";
+            }
+
+            else
+            {
+                btnAction.Text = "show";
+
+                PC0_0.Text = "";
+                PC0_1.Text = "";
+                PC1_0.Text = "";
+                PC1_1.Text = "";
+                PC2_0.Text = "";
+                PC2_1.Text = "";
+                PC3_0.Text = "";
+                PC3_1.Text = "";
+            }
+        }
+
+        private void arrowReset()
+        {
+            pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+            pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+            pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+            pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+            pictureBox10.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+            pictureBox11.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+            pictureBox12.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+            pictureBox13.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+
+        }
+
+        private void cbxPC1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(cbxPC3.Checked == true && cbxPC1.Checked == true)
+            {
+                pictureBox10.Image = null;
+                pictureBox11.Image = null;
+                pictureBox12.Image = null;
+                pictureBox13.Image = null;
+            }
+            else if (cbxPC3.Checked == false || cbxPC1.Checked == false)
+            {
+                arrowReset();
+            }
+            else
+            {
+                arrowReset();
+            }
+        }
+
+
+
+        private void cbxCut0_3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxPC1.Checked == true || cbxPC0.Checked == true)
+            {
+                if (cbxPC1.Checked == true && cbxCut0_3.Checked == true)
+                {
+                    pictureBox6.Image = null;
+                    pictureBox7.Image = null;
+                    pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_down_arrow;
+                    pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.gray_up_arrow;
+
+                    Delay(500);
+                    pictureBox12.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox10.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                    Delay(500);
+                    pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                    Delay(500);
+                    pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox6.Image = null;
+                    pictureBox7.Image = null;
+                    Delay(500);
+                    pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                    Delay(500);
+                    pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox11.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                    Delay(500);
+                    pictureBox13.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                }
+                else if (cbxPC0.Checked == true && cbxCut0_3.Checked == true)
+                {
+                    pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_down_arrow;
+                    pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.gray_up_arrow;
+
+                    Delay(500);
+                    pictureBox12.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox10.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                    Delay(500);
+                    pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                    Delay(800);
+                    pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox11.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                    Delay(500);
+                    pictureBox13.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                }
+                else if (cbxPC1.Checked == true && cbxCut0_3.Checked == false)
+                {
+                    pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                    pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                    pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                    pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+
+                    pictureBox10.Image = null;
+                    pictureBox11.Image = null;
+                    pictureBox12.Image = null;
+                    pictureBox13.Image = null;
+                }
+                else if (cbxPC0.Checked == true && cbxCut0_3.Checked == false)
+                {
+                    pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                    pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+
+                    pictureBox7.Image = null;
+                    pictureBox10.Image = null;
+                    pictureBox12.Image = null;
+                    pictureBox6.Image = null;
+                    pictureBox11.Image = null;
+                    pictureBox13.Image = null;
+                }
+            }
+        }
+
+        private void cbxCut1_0_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxPC1.Checked == true && cbxCut1_0.Checked == true)
+            {
+                pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.gray_right_arrow;
+                pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_left_arrow;
+                pictureBox8.Image = null;
+                pictureBox9.Image = null;
+
+                Delay(500);
+                pictureBox10.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                Delay(500);
+                pictureBox12.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                Delay(500);
+                pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                Delay(500);
+                pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                Delay(500);
+                pictureBox8.Image = null;
+                pictureBox9.Image = null;
+                Delay(500);
+                pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                Delay(500);
+                pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                Delay(500);
+                pictureBox13.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                Delay(500);
+                pictureBox11.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                Delay(500);
+            }
+            else if (cbxPC1.Checked == true && cbxCut1_0.Checked == false)
+            {
+                pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+
+                pictureBox10.Image = null;
+                pictureBox11.Image = null;
+                pictureBox12.Image = null;
+                pictureBox13.Image = null;
+            }
+        }
+
+        private void cbxPC0_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxPC3.Checked == true && cbxPC0.Checked == true)
+            {
+                cbxCut1_0.Enabled = false;
+                cbxCutBoth1_0.Enabled = false;
+
+                pictureBox6.Image = null;
+                pictureBox7.Image = null;
+                pictureBox10.Image = null;
+                pictureBox11.Image = null;
+                pictureBox12.Image = null;
+                pictureBox13.Image = null;
+            }
+            else if (cbxPC3.Checked == false || cbxPC1.Checked == false)
+            {
+                cbxCut1_0.Enabled = true;
+                cbxCutBoth1_0.Enabled = true;
+                arrowReset();
+            }
+            else
+            {
+                cbxCut1_0.Enabled = true;
+                cbxCutBoth1_0.Enabled = true;
+                arrowReset();
+            }
+        }
+
+        private void cbxCutBoth1_0_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxCut1_0.Checked == true && cbxPC1.Checked == true && cbxCutBoth1_0.Checked == true)
+            {
+                pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_right_arrow;
+                pictureBox8.Image = null;
+                pictureBox9.Image = null;
+                pictureBox10.Image = null;
+                pictureBox11.Image = null;
+                pictureBox12.Image = null;
+                pictureBox13.Image = null;
+
+                Delay(500);
+                pictureBox10.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                Delay(500);
+                pictureBox12.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                Delay(500);
+                pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                Delay(500);
+                pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                Delay(500);
+                pictureBox8.Image = null;
+                pictureBox9.Image = null;
+                Delay(500);
+                pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                Delay(500);
+                pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                Delay(500);
+                pictureBox13.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                Delay(500);
+                pictureBox11.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                Delay(500);
+            }
+            else if(cbxCut1_0.Checked == true && cbxPC1.Checked == true && cbxCutBoth1_0.Checked == false)
+            {
+                pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.gray_right_arrow;
+                pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_left_arrow;
+                pictureBox8.Image = null;
+                pictureBox9.Image = null;
+                pictureBox10.Image = null;
+                pictureBox11.Image = null;
+                pictureBox12.Image = null;
+                pictureBox13.Image = null;
+
+                Delay(500);
+                pictureBox10.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                Delay(500);
+                pictureBox12.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                Delay(500);
+                pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                Delay(500);
+                pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                Delay(500);
+                pictureBox8.Image = null;
+                pictureBox9.Image = null;
+                Delay(500);
+                pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                Delay(500);
+                pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                Delay(500);
+                pictureBox13.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                Delay(500);
+                pictureBox11.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                Delay(500);
+            }
+            else if (cbxCut1_0.Checked == false && cbxPC1.Checked == true && cbxCutBoth1_0.Checked == true)
+            {
+                pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_right_arrow;
+                pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_left_arrow;
+                pictureBox8.Image = null;
+                pictureBox9.Image = null;
+                pictureBox10.Image = null;
+                pictureBox11.Image = null;
+                pictureBox12.Image = null;
+                pictureBox13.Image = null;
+
+                Delay(500);
+                pictureBox10.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                Delay(500);
+                pictureBox12.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                Delay(500);
+                pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                Delay(500);
+                pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                Delay(500);
+                pictureBox8.Image = null;
+                pictureBox9.Image = null;
+                Delay(500);
+                pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                Delay(500);
+                pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                Delay(500);
+                pictureBox13.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                Delay(500);
+                pictureBox11.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                Delay(500);
+            }
+            else if (cbxCut1_0.Checked == false && cbxPC1.Checked == true && cbxCutBoth1_0.Checked == false)
+            {
+                pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+
+                pictureBox10.Image = null;
+                pictureBox11.Image = null;
+                pictureBox12.Image = null;
+                pictureBox13.Image = null;
+            }
+        }
+
+        private void cbxCutBoth0_3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxPC1.Checked == true || cbxPC0.Checked == true)
+            {
+                if (cbxPC1.Checked == true && cbxCut0_3.Checked == true && cbxCutBoth0_3.Checked == true)
+                {
+                    pictureBox6.Image = null;
+                    pictureBox7.Image = null;
+                    pictureBox10.Image = null;
+                    pictureBox11.Image = null;
+                    pictureBox12.Image = null;
+                    pictureBox13.Image = null;
+                    pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_down_arrow;
+                    pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_up_arrow;
+
+                    Delay(500);
+                    pictureBox12.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox10.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                    Delay(500);
+                    pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                    Delay(500);
+                    pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox6.Image = null;
+                    pictureBox7.Image = null;
+                    Delay(500);
+                    pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                    Delay(500);
+                    pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox11.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                    Delay(500);
+                    pictureBox13.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                }
+                else if (cbxPC1.Checked == true && cbxCut0_3.Checked == true && cbxCutBoth0_3.Checked == false)
+                {
+                    pictureBox6.Image = null;
+                    pictureBox7.Image = null;
+                    pictureBox10.Image = null;
+                    pictureBox11.Image = null;
+                    pictureBox12.Image = null;
+                    pictureBox13.Image = null;
+                    pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_down_arrow;
+                    pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.gray_up_arrow;
+
+                    Delay(500);
+                    pictureBox12.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox10.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                    Delay(500);
+                    pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                    Delay(500);
+                    pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox6.Image = null;
+                    pictureBox7.Image = null;
+                    Delay(500);
+                    pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                    Delay(500);
+                    pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox11.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                    Delay(500);
+                    pictureBox13.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                }
+                else if (cbxPC1.Checked == true && cbxCut0_3.Checked == false && cbxCutBoth0_3.Checked == true)
+                {
+                    pictureBox6.Image = null;
+                    pictureBox7.Image = null;
+                    pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_down_arrow;
+                    pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_up_arrow;
+
+                    Delay(500);
+                    pictureBox12.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox10.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                    Delay(500);
+                    pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                    Delay(500);
+                    pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox6.Image = null;
+                    pictureBox7.Image = null;
+                    Delay(500);
+                    pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                    Delay(500);
+                    pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox11.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                    Delay(500);
+                    pictureBox13.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                }
+                else if (cbxPC1.Checked == true && cbxCut0_3.Checked == false && cbxCutBoth0_3.Checked == false)
+                {
+                    pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                    pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                    pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                    pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+
+                    pictureBox10.Image = null;
+                    pictureBox11.Image = null;
+                    pictureBox12.Image = null;
+                    pictureBox13.Image = null;
+                }
+                else if(cbxPC0.Checked == true && cbxCut0_3.Checked == true && cbxCutBoth0_3.Checked == true)
+                {
+                    pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_down_arrow;
+                    pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_up_arrow;
+                    pictureBox7.Image = null;
+                    pictureBox10.Image = null;
+                    pictureBox12.Image = null;
+                    pictureBox6.Image = null;
+                    pictureBox11.Image = null;
+                    pictureBox13.Image = null;
+
+                    Delay(500);
+                    pictureBox12.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox10.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                    Delay(500);
+                    pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                    Delay(800);
+                    pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox11.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                    Delay(500);
+                    pictureBox13.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                }
+                else if (cbxPC0.Checked == true && cbxCut0_3.Checked == true && cbxCutBoth0_3.Checked == false)
+                {
+                    pictureBox7.Image = null;
+                    pictureBox10.Image = null;
+                    pictureBox12.Image = null;
+                    pictureBox6.Image = null;
+                    pictureBox11.Image = null;
+                    pictureBox13.Image = null;
+
+                    pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_down_arrow;
+                    pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.gray_up_arrow;
+
+                    Delay(500);
+                    pictureBox12.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox10.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                    Delay(500);
+                    pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                    Delay(800);
+                    pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox11.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                    Delay(500);
+                    pictureBox13.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                }
+                else if (cbxPC0.Checked == true && cbxCut0_3.Checked == false && cbxCutBoth0_3.Checked == true)
+                {
+                    pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_down_arrow;
+                    pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.red_up_arrow;
+
+                    Delay(500);
+                    pictureBox12.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox10.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+                    Delay(500);
+                    pictureBox7.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                    Delay(800);
+                    pictureBox6.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_right_arrow;
+                    Delay(500);
+                    pictureBox11.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                    Delay(500);
+                    pictureBox13.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_left_arrow;
+                }
+                else if (cbxPC0.Checked == true && cbxCut0_3.Checked == false && cbxCutBoth0_3.Checked == false)
+                {
+                    pictureBox8.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_down_arrow;
+                    pictureBox9.Image = WindowsFormsApp_SerialPortTest.Properties.Resources.green_up_arrow;
+
+                    pictureBox7.Image = null;
+                    pictureBox10.Image = null;
+                    pictureBox12.Image = null;
+                    pictureBox6.Image = null;
+                    pictureBox11.Image = null;
+                    pictureBox13.Image = null;
+                }
+            }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            cbxPC0.Checked = false;
+            cbxPC1.Checked = false;
+            cbxCutBoth0_3.Checked = false;
+            cbxCut0_3.Checked = false;
+            cbxCutBoth1_0.Checked = false;
+            cbxCut1_0.Checked = false;
+
+            arrowReset();
+        }
     }
 }
